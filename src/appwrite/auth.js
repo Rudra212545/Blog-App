@@ -5,7 +5,6 @@ export class AuthService{
     client = new Client();
     account;
 
-
     constructor(){
         this.client
             .setEndpoint(config.appwriteUrl)
@@ -38,8 +37,8 @@ export class AuthService{
     async getCurrentUser(){
         try {
             return await this.account.get();
-        } catch (error) {
-            console.log("Appwrite Service :: Get User error ", error);
+        }catch (error) {
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
 
         return null ;
